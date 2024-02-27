@@ -28,7 +28,14 @@ public class InMemoryInstructorDal : IInstructorDal
 
     public void Delete(Instructor instructor)
     {
-        _instructors.Remove(instructor);
+        _instructors.RemoveAll(
+            instructorloop => instructorloop.InstructorId == instructor.InstructorId 
+            && 
+            instructorloop.InstructorFirstName.ToLower() == instructor.InstructorFirstName.ToLower() 
+            && 
+            instructorloop.InstructorLastName.ToLower() == instructor.InstructorLastName.ToLower()
+            );
+        //_instructors.Remove(instructor);
     }
 
     public List<Instructor> getAll()

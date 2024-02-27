@@ -27,7 +27,9 @@ public class InMemoryCategoryDal : ICategoryDal
 
     public void Delete(Category category)
     {
-        _categories.Remove(category);
+        //burada düzeltmeler yapılabilir
+        _categories.RemoveAll(c => c.Id == category.Id && c.Name.ToLower() == category.Name.ToLower());
+        //_categories.Remove(category);
     }
 
     public List<Category> GetAll()

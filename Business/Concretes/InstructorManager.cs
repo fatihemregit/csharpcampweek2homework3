@@ -20,26 +20,34 @@ public class InstructorManager : IInstructorService
 
     public void Add(Instructor instructor)
     {
+        //test edildi çalışıyor
+
         _instructorDal.Add(instructor);
     }
 
     public void Delete(Instructor instructor)
     {
+        //test edildi çalışıyor
+
         _instructorDal.Delete(instructor);
     }
 
     public List<Instructor> getAll()
     {
+        //test edildi çalışıyor
+
         return _instructorDal.getAll();
     }
 
     public Instructor GetById(int id)
     {
+        //test edildi çalışıyor
         return _instructorDal.GetById(id);
     }
 
     public void Update(Instructor instructor)
     {
+        //test edildi çalışıyor
         _instructorDal.Update(instructor);
     }
 }

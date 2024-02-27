@@ -29,7 +29,18 @@ public class InMemoryCourseDal : ICourseDal
 
     public void Delete(Course course)
     {
-        _courses.Remove(course);
+        _courses.RemoveAll(courseloop => 
+        courseloop.CourseId == course.CourseId
+        &&
+        courseloop.CategoryId == course.CategoryId
+        &&
+        courseloop.InstructorId == course.InstructorId
+        &&
+        courseloop.CourseName.ToLower() == course.CourseName.ToLower()
+        &&
+        courseloop.CourseDescription.ToLower() == course.CourseDescription.ToLower()
+        );
+        //_courses.Remove(course);
     }
 
     public List<Course> GetAll()
